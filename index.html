@@ -2,454 +2,907 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Randolph Isaac Centina | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joseph Centina | IT Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fc;
-            color: #333;
-            line-height: 1.6;
-        }
+:root {
+    --dark: #0b1220;
+    --panel: #142238;
+    --mint: #56e0c0;
+    --blue: #7da7ff;
+    --white: #edf4ff;
+    --gray: #a8b6ca;
+}
 
-        header {
-            background-color: #10243a;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        header h2 {
-            margin-bottom: 10px;
-        }
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    line-height: 1.7;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+.container {
+    max-width: 1120px;
+    width: 90%;
+    margin: auto;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
+header {
+    background: rgba(11,18,32,.96);
+    border-bottom: 1px solid #ffffff20;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        nav a:hover {
-            color: #60a5fa;
-        }
+.nav {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 25px;
-        }
+.logo {
+    font-family: 'Space Grotesk';
+    font-weight: bold;
+    font-size: 18px;
+}
 
-        section {
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+.logo span {
+    color: var(--mint);
+}
 
-        h1, h2, h3 {
-            color: #10243a;
-        }
+nav {
+    display: flex;
+    gap: 22px;
+}
 
-        section h2 {
-            margin-bottom: 18px;
-            border-bottom: 2px solid #2563eb;
-            padding-bottom: 8px;
-        }
+nav a {
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 14px;
+    transition: .3s;
+}
 
-        p {
-            margin-bottom: 12px;
-        }
+nav a:hover {
+    color: var(--mint);
+}
 
-        .profile {
-            text-align: center;
-            padding: 40px 30px;
-        }
+.menu {
+    display: none;
+    padding: 8px 12px;
+    background: var(--panel);
+    color: white;
+    border: 1px solid #ffffff30;
+    border-radius: 8px;
+}
 
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #2563eb;
-            margin-bottom: 15px;
-        }
+.hero {
+    padding: 90px 0 60px;
+}
 
-        .profile h1 {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 40px;
+    align-items: center;
+}
 
-        .profile h3 {
-            color: #2563eb;
-            margin-bottom: 15px;
-        }
+.eyebrow {
+    color: var(--mint);
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        .profile p {
-            max-width: 750px;
-            margin: auto;
-        }
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.25;
+}
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
+h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    margin: 18px 0;
+    letter-spacing: -3px;
+}
 
-        .card {
-            background-color: #f4f7fc;
-            padding: 18px;
-            border-radius: 8px;
-            border-left: 4px solid #2563eb;
-        }
+h1 span {
+    color: var(--mint);
+}
 
-        .card h3 {
-            margin-bottom: 8px;
-        }
+.hero p.description {
+    color: var(--gray);
+    max-width: 620px;
+    margin-bottom: 25px;
+}
 
-        ul {
-            padding-left: 25px;
-        }
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
-        li {
-            margin-bottom: 8px;
-        }
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
 
-        .project {
-            background-color: #f4f7fc;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #2563eb;
-        }
+.btn-primary {
+    background: var(--mint);
+    color: #071520;
+}
 
-        .project h3 {
-            margin-bottom: 10px;
-        }
+.btn-secondary {
+    border: 1px solid #ffffff35;
+    color: white;
+}
 
-        .tag {
-            display: inline-block;
-            background-color: #dbeafe;
-            color: #1d4ed8;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin: 5px 3px 0 0;
-        }
+.btn:hover {
+    transform: translateY(-3px);
+}
 
-        footer {
-            background-color: #10243a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+.photo-box {
+    min-height: 320px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 25px;
+    background: linear-gradient(140deg, #56e0c025, #7da7ff25);
+    border: 1px solid #ffffff20;
+}
 
-        footer p {
-            margin: 5px;
-        }
+.photo-box img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+}
 
-        @media (max-width: 600px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
+.photo-box .initials {
+    display: none;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(140deg, var(--mint), var(--blue));
+    color: var(--dark);
+    place-items: center;
+    font-size: 45px;
+    font-weight: bold;
+}
 
-            .profile h1 {
-                font-size: 23px;
-            }
+.photo-label {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 10px;
+    background: var(--dark);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--mint);
+}
 
-            nav {
-                gap: 10px;
-            }
+.facts {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+    margin-top: 30px;
+}
 
-            main {
-                padding: 15px;
-            }
+.fact {
+    background: #ffffff08;
+    border: 1px solid #ffffff20;
+    padding: 14px;
+    border-radius: 10px;
+}
 
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+.fact strong {
+    display: block;
+    font-size: 13px;
+}
+
+.fact small {
+    color: var(--gray);
+}
+
+section {
+    padding: 35px 0;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading small {
+    color: var(--mint);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    margin-top: 5px;
+}
+
+.section-heading p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.panel, .card {
+    background: var(--panel);
+    border: 1px solid #ffffff18;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.bio {
+    color: #c4d0e0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+
+.card {
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #56e0c060;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 19px;
+}
+
+.card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.card ul {
+    padding-left: 20px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.label {
+    color: var(--mint);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.institution {
+    color: var(--blue) !important;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid #ffffff18;
+    padding: 9px 0;
+    font-size: 13px;
+}
+
+.detail span:first-child {
+    color: var(--gray);
+}
+
+.detail span:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.chip {
+    background: #7da7ff15;
+    border: 1px solid #7da7ff40;
+    color: #d2e0f7;
+    padding: 6px 11px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.project-number {
+    color: var(--mint);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.project-meta {
+    border-top: 1px solid #ffffff20;
+    margin-top: 15px;
+    padding-top: 12px;
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.project-meta strong {
+    color: white;
+}
+
+.note {
+    display: block;
+    margin-top: 12px;
+    color: var(--mint);
+    font-size: 12px;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+}
+
+.value {
+    background: var(--panel);
+    padding: 15px;
+    border: 1px solid #ffffff20;
+    border-radius: 10px;
+}
+
+.value strong {
+    display: block;
+    color: var(--mint);
+}
+
+.value span {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(120deg,#56e0c020,#7da7ff20);
+    border: 1px solid #ffffff20;
+    padding: 28px;
+    border-radius: 16px;
+}
+
+.contact p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    color: var(--gray);
+    padding: 35px 0;
+    border-top: 1px solid #ffffff20;
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+@media(max-width: 750px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-box {
+        grid-row: 1;
+        min-height: 260px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .grid, .values {
+        grid-template-columns: 1fr;
+    }
+
+    .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER AND NAVIGATION -->
-    <header>
-        <h2>My Personal Portfolio</h2>
+<header>
+    <div class="container nav">
+        <div class="logo">JOSEPH CENTINA<span>.</span></div>
 
-        <nav>
-            <a href="#profile">Profile</a>
+        <button class="menu" id="menu">Menu ☰</button>
+
+        <nav id="navigation">
+            <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#achievements">Achievements</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#values">Work Ethics</a>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <main>
+<main class="container">
 
-        <!-- 1. PROFILE AND BIOGRAPHY -->
-        <section class="profile" id="profile">
+<!-- PROFILE -->
+<section class="hero" id="about">
+    <div class="hero-content">
+        <div>
+            <div class="eyebrow">Information Technology Student</div>
 
-            <img src="profile.jpg" alt="Joseph's Profile Picture">
+            <h1>Hello, I'm <span>Joseph.</span></h1>
 
-            <h1>Joseph Randolph Isaac Centina</h1>
-
-            <h3>Computer Science / IT Student</h3>
-
-            <p><strong>Age:</strong> 19 years old</p>
-
-            <br>
-
-            <p>
-                Hello! I am Joseph Randolph Isaac Centina, a 19-year-old
-                student interested in technology and computer programming.
-                I am currently pursuing my studies in the field of Computer
-                Science / Information Technology. I enjoy learning about
-                computers, programming languages, and how technology can
-                solve everyday problems. Through my academic activities
-                and programming exercises, I continue to develop my
-                problem-solving skills, logical thinking, and technical
-                knowledge. My goal is to become a skilled and responsible
-                technology professional who can create useful and
-                innovative digital solutions. I believe that patience,
-                dedication, and continuous learning are important
-                qualities for achieving success in the IT industry.
+            <p class="description">
+                A motivated Information Technology student with a growing
+                passion for programming, web development, and technology.
+                I enjoy solving problems, exploring new ideas, and creating
+                digital solutions that can make everyday tasks easier.
             </p>
 
-            <br>
-
-            <span class="tag">Programming</span>
-            <span class="tag">Technology</span>
-            <span class="tag">Problem-Solving</span>
-
-        </section>
-
-        <!-- 2. ACADEMIC BACKGROUND -->
-        <section id="education">
-
-            <h2>Academic Background</h2>
-
-            <div class="container">
-
-                <div class="card">
-                    <h3>College Education</h3>
-                    <p><strong>Program:</strong> Computer Science / IT</p>
-                    <p><strong>School:</strong> Your College Name</p>
-                    <p><strong>Expected Graduation:</strong> Your Year</p>
-                </div>
-
-                <div class="card">
-                    <h3>Senior High School</h3>
-                    <p><strong>School:</strong> Your SHS Name</p>
-                    <p><strong>Track/Strand:</strong> Your Strand</p>
-                    <p><strong>Year Graduated:</strong> Your Year</p>
-                </div>
-
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">Explore My Projects ↗</a>
+                <a href="#education" class="btn btn-secondary">My Education</a>
             </div>
 
-            <br>
+            <div class="facts">
+                <div class="fact">
+                    <strong>19 Years Old</strong>
+                    <small>Personal Profile</small>
+                </div>
+                <div class="fact">
+                    <strong>University of San Agustin</strong>
+                    <small>College Institution</small>
+                </div>
+                <div class="fact">
+                    <strong>Information Technology</strong>
+                    <small>College Program</small>
+                </div>
+            </div>
+        </div>
 
-            <h3>Relevant Coursework</h3>
+        <div class="photo-box">
+            <img src="profile.jpg" alt="Joseph Centina"
+            onerror="this.style.display='none';document.getElementById('initials').style.display='grid';">
 
-            <ul>
-                <li>Introduction to Programming</li>
-                <li>Computer Programming using C++</li>
-                <li>Computer Systems and Troubleshooting</li>
-                <li>Web Development Fundamentals</li>
-                <li>Data Structures and Arrays</li>
-            </ul>
+            <div class="initials" id="initials">JC</div>
 
-        </section>
+            <div class="photo-label">Future IT Professional</div>
+        </div>
+    </div>
+</section>
 
-        <!-- 3. NOTABLE ACHIEVEMENTS -->
-        <section id="achievements">
+<!-- BIOGRAPHY -->
+<section>
+    <div class="section-heading">
+        <small>01 / INTRODUCTION</small>
+        <h2>About Me</h2>
+        <p>Getting to know the person behind the code.</p>
+    </div>
 
-            <h2>Notable Achievements</h2>
+    <div class="panel bio">
+        My name is <strong>Joseph Randolph Isaac Centina</strong>, and I am
+        a 19-year-old Information Technology student at the
+        <strong>University of San Agustin</strong>. I am passionate about
+        understanding how technology works and how it can make everyday
+        tasks easier, faster, and more meaningful. My interest in IT
+        continues to grow as I explore programming, web development,
+        and computer systems. I enjoy solving problems step by step,
+        experimenting with code, and learning from both successful
+        results and mistakes. I value discipline, curiosity, and
+        continuous improvement. My goal is to develop the technical
+        knowledge and professional mindset needed to contribute to
+        real-world technology projects. I look forward to expanding
+        my skills, collaborating with others, and creating digital
+        solutions that are useful, accessible, and reliable.
+    </div>
+</section>
 
-            <ul>
-                <li>Completed basic C++ programming exercises.</li>
-                <li>Developed knowledge of arrays and pointers.</li>
-                <li>Participated in academic programming activities.</li>
-                <li>Continuously improving technical and computer skills.</li>
-            </ul>
+<!-- EDUCATION -->
+<section id="education">
+    <div class="section-heading">
+        <small>02 / MY JOURNEY</small>
+        <h2>Academic Background</h2>
+        <p>My educational foundation and academic development.</p>
+    </div>
 
+    <div class="grid">
+        <div class="card">
+            <div class="label">CURRENT EDUCATION</div>
+            <h3>College Education</h3>
+            <p class="institution">University of San Agustin</p>
+
+            <div class="detail">
+                <span>Program</span>
+                <span>Information Technology</span>
+            </div>
+            <div class="detail">
+                <span>Level</span>
+                <span>College</span>
+            </div>
+            <div class="detail">
+                <span>Status</span>
+                <span>Currently Enrolled</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="label">PREVIOUS EDUCATION</div>
+            <h3>Senior High School</h3>
+            <p class="institution">Colegio del Sagrado Corazon de Jesus</p>
+
+            <div class="detail">
+                <span>Track / Strand</span>
+                <span>STEM</span>
+            </div>
+            <div class="detail">
+                <span>Full Strand</span>
+                <span>Science, Technology, Engineering and Mathematics</span>
+            </div>
+            <div class="detail">
+                <span>Year Graduated</span>
+                <span>2026</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+        <h3>Relevant Learning Areas</h3>
+        <div class="chips">
+            <span class="chip">Computer Programming</span>
+            <span class="chip">C++ Fundamentals</span>
+            <span class="chip">Web Development</span>
+            <span class="chip">Computer Systems</span>
+            <span class="chip">Problem-Solving</span>
+            <span class="chip">Mathematical Reasoning</span>
+        </div>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+    <div class="section-heading">
+        <small>03 / MILESTONES</small>
+        <h2>Notable Achievements</h2>
+        <p>Academic experiences and personal learning milestones.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="label">01</div>
+            <h3>STEM Academic Foundation</h3>
             <p>
-                <em>
-                    Add your actual awards, certificates, and other
-                    achievements here.
-                </em>
+                Completed the STEM strand in senior high school,
+                strengthening my analytical thinking, mathematical
+                reasoning, and structured problem-solving abilities.
             </p>
+        </div>
 
-        </section>
-
-        <!-- 4. SKILLS AND PROGRAMMING LANGUAGES -->
-        <section id="skills">
-
-            <h2>Skillset & Programming Languages</h2>
-
-            <div class="container">
-
-                <div class="card">
-                    <h3>Technical Skills</h3>
-
-                    <ul>
-                        <li>C++ Programming</li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>Basic Computer Troubleshooting</li>
-                        <li>Arrays and Pointers</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>Soft Skills</h3>
-
-                    <ul>
-                        <li>Problem-Solving</li>
-                        <li>Time Management</li>
-                        <li>Communication</li>
-                        <li>Teamwork</li>
-                        <li>Adaptability</li>
-                        <li>Willingness to Learn</li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- 5. PROJECTS AND RESEARCHES -->
-        <section id="projects">
-
-            <h2>Projects & Researches</h2>
-
-            <div class="project">
-
-                <h3>Project 1: Array Sum and Average Calculator</h3>
-
-                <p>
-                    This project is a C++ program that accepts several
-                    numbers from the user and stores them in an array.
-                    It calculates the total sum and average of the
-                    entered numbers.
-                </p>
-
-                <p><strong>Objective:</strong> To practice arrays,
-                loops, and basic mathematical operations.</p>
-
-                <p><strong>Technologies Used:</strong> C++</p>
-
-                <span class="tag">C++</span>
-                <span class="tag">Arrays</span>
-                <span class="tag">Programming</span>
-
-            </div>
-
-            <div class="project">
-
-                <h3>Project 2: Pointer-Based Value Modifier</h3>
-
-                <p>
-                    This project demonstrates how pointers work in
-                    C++. It uses pointers to access and modify the
-                    values of two integer variables through
-                    dereferencing.
-                </p>
-
-                <p><strong>Objective:</strong> To understand pointers,
-                memory addresses, and dereferencing.</p>
-
-                <p><strong>Technologies Used:</strong> C++</p>
-
-                <span class="tag">C++</span>
-                <span class="tag">Pointers</span>
-                <span class="tag">Programming</span>
-
-            </div>
-
-        </section>
-
-        <!-- 6. WORK ETHICS AND CORE VALUES -->
-        <section id="values">
-
-            <h2>Work Ethics & Core Values</h2>
-
+        <div class="card">
+            <div class="label">02</div>
+            <h3>Programming Development</h3>
             <p>
-                I believe that being a successful IT professional
-                requires responsibility, discipline, honesty, and
-                continuous learning. I always aim to improve myself
-                and produce quality work in every task.
+                Practiced C++ programming through exercises involving
+                variables, loops, conditional statements, arrays,
+                functions, and pointers.
             </p>
+        </div>
 
-            <ul>
-                <li>
-                    <strong>Responsibility:</strong>
-                    Completing assigned tasks and accepting accountability.
-                </li>
+        <div class="card">
+            <div class="label">03</div>
+            <h3>Personal Website Development</h3>
+            <p>
+                Designed a personal portfolio using HTML and CSS
+                to showcase my background, skills, and academic work.
+            </p>
+        </div>
 
-                <li>
-                    <strong>Time Management:</strong>
-                    Respecting deadlines and using time wisely.
-                </li>
+        <div class="card">
+            <div class="label">04</div>
+            <h3>Continuous Self-Learning</h3>
+            <p>
+                Developed independent learning habits by reviewing
+                programming concepts, practicing coding, and
+                improving through hands-on activities.
+            </p>
+        </div>
+    </div>
+</section>
 
-                <li>
-                    <strong>Honesty:</strong>
-                    Being truthful and giving credit to others.
-                </li>
+<!-- SKILLS -->
+<section id="skills">
+    <div class="section-heading">
+        <small>04 / EXPERTISE</small>
+        <h2>Skills & Technologies</h2>
+        <p>Technical knowledge and personal abilities I continue to develop.</p>
+    </div>
 
-                <li>
-                    <strong>Teamwork:</strong>
-                    Cooperating and respecting other people's ideas.
-                </li>
+    <div class="grid">
+        <div class="card">
+            <h3>Programming & Development</h3>
+            <p>Foundational programming and website development knowledge.</p>
+            <div class="chips">
+                <span class="chip">C++</span>
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">JavaScript Basics</span>
+                <span class="chip">Responsive Design</span>
+            </div>
+        </div>
 
-                <li>
-                    <strong>Continuous Learning:</strong>
-                    Developing new knowledge and technical skills.
-                </li>
+        <div class="card">
+            <h3>Technical Skills</h3>
+            <p>Basic computer and programming concepts.</p>
+            <div class="chips">
+                <span class="chip">Arrays & Pointers</span>
+                <span class="chip">Debugging Basics</span>
+                <span class="chip">Computer Troubleshooting</span>
+                <span class="chip">Logic & Algorithms</span>
+            </div>
+        </div>
 
-                <li>
-                    <strong>Dedication:</strong>
-                    Giving my best effort in every responsibility.
-                </li>
-            </ul>
+        <div class="card">
+            <h3>Soft Skills</h3>
+            <p>Personal qualities that help me work and learn effectively.</p>
+            <div class="chips">
+                <span class="chip">Problem-Solving</span>
+                <span class="chip">Teamwork</span>
+                <span class="chip">Communication</span>
+                <span class="chip">Adaptability</span>
+                <span class="chip">Time Management</span>
+                <span class="chip">Attention to Detail</span>
+            </div>
+        </div>
 
-        </section>
+        <div class="card">
+            <h3>Future Learning Goals</h3>
+            <p>Technologies and concepts I aim to study further.</p>
+            <div class="chips">
+                <span class="chip">JavaScript</span>
+                <span class="chip">Git & GitHub</span>
+                <span class="chip">Database Fundamentals</span>
+                <span class="chip">UI/UX Design</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </main>
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="section-heading">
+        <small>05 / MY WORK</small>
+        <h2>Projects & Practical Work</h2>
+        <p>Sample academic work demonstrating my developing technical skills.</p>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
+    <div class="grid">
 
-        <p>
-            &copy; 2026 Joseph Randolph Isaac Centina
-        </p>
+        <div class="card">
+            <div class="project-number">PROJECT 01</div>
+            <h3>Student Grade Calculator</h3>
+            <p>
+                A C++ program that accepts student scores, calculates
+                the average, and displays a corresponding result.
+                It demonstrates basic input handling and decision-making.
+            </p>
+            <div class="project-meta">
+                <strong>Objective:</strong> Practice variables,
+                arithmetic operations, and conditional statements.
+            </div>
+            <div class="chips">
+                <span class="chip">C++</span>
+                <span class="chip">Conditionals</span>
+                <span class="chip">Basic Logic</span>
+            </div>
+            <span class="note">Add your project screenshot or repository link.</span>
+        </div>
 
-        <p>Personal Web Portfolio | All Rights Reserved</p>
+        <div class="card">
+            <div class="project-number">PROJECT 02</div>
+            <h3>Array and Pointer Operations</h3>
+            <p>
+                A collection of C++ exercises involving finding
+                minimum and maximum values, reversing array elements,
+                and modifying values through pointer dereferencing.
+            </p>
+            <div class="project-meta">
+                <strong>Objective:</strong> Understand arrays,
+                memory addresses, iteration, and pointers.
+            </div>
+            <div class="chips">
+                <span class="chip">C++</span>
+                <span class="chip">Arrays</span>
+                <span class="chip">Pointers</span>
+            </div>
+            <span class="note">Add your project screenshot or repository link.</span>
+        </div>
 
-    </footer>
+        <div class="card">
+            <div class="project-number">PROJECT 03</div>
+            <h3>Personal Web Portfolio</h3>
+            <p>
+                A responsive personal website presenting my profile,
+                education, technical skills, achievements, and
+                programming work in one organized digital space.
+            </p>
+            <div class="project-meta">
+                <strong>Objective:</strong> Apply web development
+                fundamentals and create a professional online identity.
+            </div>
+            <div class="chips">
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">Responsive Design</span>
+            </div>
+            <span class="note">Current portfolio project.</span>
+        </div>
+
+        <div class="card">
+            <div class="project-number">PROJECT 04</div>
+            <h3>Computer Maintenance Guide</h3>
+            <p>
+                An educational guide explaining computer care,
+                software updates, file management, proper ventilation,
+                and safe computer handling.
+            </p>
+            <div class="project-meta">
+                <strong>Objective:</strong> Present basic computer
+                maintenance practices clearly and effectively.
+            </div>
+            <div class="chips">
+                <span class="chip">Computer Systems</span>
+                <span class="chip">Documentation</span>
+                <span class="chip">Digital Literacy</span>
+            </div>
+            <span class="note">Add your activity screenshot when available.</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- WORK ETHICS -->
+<section id="values">
+    <div class="section-heading">
+        <small>06 / PROFESSIONAL MINDSET</small>
+        <h2>Work Ethics & Core Values</h2>
+        <p>The principles I aim to practice in school and my future career.</p>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            I believe that technical knowledge should always be
+            supported by integrity, responsibility, and respect.
+            I approach every task with dedication and a willingness
+            to learn. I understand that mistakes are part of growth,
+            and I use feedback and experience to improve my abilities.
+            My goal is to become a dependable IT professional who
+            values teamwork, quality, and continuous development.
+        </div>
+
+        <div class="values">
+            <div class="value">
+                <strong>Integrity</strong>
+                <span>Be honest and acknowledge other people's contributions.</span>
+            </div>
+
+            <div class="value">
+                <strong>Responsibility</strong>
+                <span>Take ownership of tasks and complete commitments.</span>
+            </div>
+
+            <div class="value">
+                <strong>Discipline</strong>
+                <span>Respect deadlines and manage time effectively.</span>
+            </div>
+
+            <div class="value">
+                <strong>Teamwork</strong>
+                <span>Respect different opinions and cooperate with others.</span>
+            </div>
+
+            <div class="value">
+                <strong>Quality</strong>
+                <span>Keep work organized and check details carefully.</span>
+            </div>
+
+            <div class="value">
+                <strong>Continuous Learning</strong>
+                <span>Stay curious and consistently develop new skills.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLOSING -->
+<section>
+    <div class="contact">
+        <div>
+            <div class="eyebrow">THANK YOU FOR VISITING</div>
+            <h2>Let's Keep Learning and Building.</h2>
+            <p>
+                Looking forward to growing, collaborating, and
+                contributing to the world of Information Technology.
+            </p>
+        </div>
+
+        <a href="#home" class="btn btn-primary">Back to Top ↑</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Joseph Randolph Isaac Centina</p>
+    <p>Personal Web Portfolio | Designed with HTML and CSS</p>
+</footer>
+
+</main>
+
+<script>
+const menu = document.getElementById("menu");
+const navigation = document.getElementById("navigation");
+
+menu.addEventListener("click", function() {
+    const open = navigation.classList.toggle("open");
+    menu.setAttribute("aria-expanded", open);
+});
+
+navigation.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navigation.classList.remove("open");
+        menu.setAttribute("aria-expanded", "false");
+    });
+});
+</script>
 
 </body>
 </html>
